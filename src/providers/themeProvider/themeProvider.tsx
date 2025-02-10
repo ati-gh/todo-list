@@ -39,7 +39,7 @@ let theme = createTheme({
   direction: "rtl",
   palette: {
     primary: {
-      main: "#017785", //main
+      main: "#517FF6", //main
       dark: "#005B66", //hover
       "100": "#2A9BA8", //primary-01
       "200": "#79BEC6", //primary-02
