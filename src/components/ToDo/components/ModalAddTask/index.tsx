@@ -3,7 +3,13 @@ import BasicModal from "../../../kit/modal";
 import { ModalPropsTask } from "../../toDoList";
 import MinHeightTextarea from "../../../kit/textArea";
 
-export default function ToDo({ open, setOpen }: ModalPropsTask) {
+export default function ToDo({
+  open,
+  setOpen,
+  inputRef,
+  add,
+  textareaRef,
+}: ModalPropsTask) {
   return (
     <BasicModal
       title="Add a new to-do:"
@@ -17,8 +23,10 @@ export default function ToDo({ open, setOpen }: ModalPropsTask) {
           id="Task"
           label="Task"
           variant="outlined"
+          inputRef={inputRef}
         />
-        <MinHeightTextarea />
+
+        <MinHeightTextarea ref={textareaRef} />
         <Button
           variant="contained"
           sx={{
@@ -28,6 +36,7 @@ export default function ToDo({ open, setOpen }: ModalPropsTask) {
             height: "40px",
             marginTop: "16px",
           }}
+          onClick={add}
         >
           Add
         </Button>

@@ -2,7 +2,13 @@ import { Box, Button, Grid2 } from "@mui/material";
 import ModalAddTask from "../ModalAddTask";
 import { ModalPropsTask } from "../../toDoList";
 
-export default function ToDo({ setOpen, open }: ModalPropsTask) {
+export default function ToDo({
+  setOpen,
+  open,
+  inputRef,
+  add,
+  textareaRef,
+}: ModalPropsTask) {
   return (
     <Box
       sx={{
@@ -12,7 +18,15 @@ export default function ToDo({ setOpen, open }: ModalPropsTask) {
         justifyContent: "space-between",
       }}
     >
-      {open && <ModalAddTask setOpen={setOpen} open={open} />}
+      {open && (
+        <ModalAddTask
+          add={add}
+          inputRef={inputRef}
+          setOpen={setOpen}
+          open={open}
+          textareaRef={textareaRef}
+        />
+      )}
       <Button
         variant="contained"
         sx={{

@@ -1,7 +1,7 @@
 import { TextareaAutosize as BaseTextareaAutosize } from "@mui/material";
 import { styled } from "@mui/system";
 
-export default function MinHeightTextarea() {
+export default function MinHeightTextarea({ ref }: any) {
   const blue = {
     100: "#DAECFF",
     200: "#b6daff",
@@ -60,6 +60,7 @@ export default function MinHeightTextarea() {
 
   return (
     <Textarea
+      ref={ref}
       aria-label="minimum height"
       minRows={3}
       placeholder="Minimum 3 rows"
